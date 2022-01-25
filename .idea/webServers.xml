@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3ffaf3d9-4195-4530-a7f1-b64f6f4af1dd" name="eli website" url="http://localhost">
+        <fileTransfer mountedRoot="C:\Users\eliog\PycharmProjects\Eli_website" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
