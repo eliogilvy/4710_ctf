@@ -1,3 +1,6 @@
-li.a {
+.menu li {
    display: inline;
+}
+.gohome a {
+   color: black;
 }
