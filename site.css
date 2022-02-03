@@ -1,6 +1,12 @@
-.menu li {
+li.menu {
    display: inline;
 }
-.gohome a {
+a.gohome {
    color: black;
+}
+p.error {
+   color: red;
+}
+label.login-form{
+   color:blue;
 }
