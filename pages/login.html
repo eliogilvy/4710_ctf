@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../site.css">
+    <link rel="icon" type="image/x-icon" href="../Seattle_Redhawks_logo.svg.png">
+    <script type="text/javascript" src="/js_scripts/display_flag.js"></script>
+    <meta charset="UTF-8">
+    <title>Task 4</title>
+</head>
+<body>
+    <a class="gohome" href="../index.html">Go home</a>
+    <h1>Oh cool a login page</h1>
+    <!---Remember to change default credentials....--->
+    <form method="post">
+        <div class="login">
+            <label><b>Username</b></label>
+            <br>
+            <input class="login-form" type="text" name="uname" id="uname"
+                   placeholder="Username">
+            <br><br>
+            <label><b>Password</b></label>
+            <br>
+            <input class="login-form" type="password" name="psw" id="psw"
+                   placeholder="Password">
+            <br><br>
+            <button type="button" id="submit" onclick="login()">Login
+            </button>
+            <p class="error" id="error"></p>
+        </div>
+    </form>
+</body>
+</html>
