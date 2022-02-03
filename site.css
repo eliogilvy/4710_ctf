@@ -10,3 +10,10 @@ p.error {
 label.login-form{
    color:blue;
 }
+body.task3 {
+   background-color: aliceblue;
+}
+div.task3{
+   text-align: center;
+   padding-top: 500px;
+}
