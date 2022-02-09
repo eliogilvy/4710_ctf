@@ -64,6 +64,5 @@ div.task3{
    to{opacity: 0.0;}
 }
 .text-center{
-    margin: auto;
-    width: 50%;
+    text-align: center;
 }
