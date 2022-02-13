@@ -66,3 +66,16 @@ div.task3{
 .text-center{
     text-align: center;
 }
+.center {
+    text-align: center;
+    padding: 10px;
+    color: azure;
+    font-size: large;
+}
+
+.pages{
+    background-image: url('book.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
