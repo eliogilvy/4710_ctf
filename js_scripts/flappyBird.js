@@ -21,31 +21,7 @@ const startBtn = {
     h : 29
 }
 
-canvas.addEventListener("click", function(evt){
-    switch(state.current){
-        case state.getReady:
-            state.current = state.game;
-            break;
-        case state.game:
-            if(bird.y - bird.radius <= 0) return;
-            bird.flap();
-            break;
-        case state.over:
-            let rect = canvas.getBoundingClientRect();
-            let clickX = evt.clientX - rect.left;
-            let clickY = evt.clientY - rect.top;
-            
-            // CHECK IF WE CLICK ON THE START BUTTON
-            if(clickX >= startBtn.x && clickX <= startBtn.x + startBtn.w && clickY >= startBtn.y && clickY <= startBtn.y + startBtn.h){
-                pipes.reset();
-                bird.speedReset();
-                ReadableStreamBYOOBRequest.reset();
-                state.current = state.getReady;
-            }
-            break;
-    }
-});
-
+function _0x4b4a(_0x2fa603,_0x51cffe){const _0x3098ee=_0x3098();return _0x4b4a=function(_0x4b4a04,_0x54c76c){_0x4b4a04=_0x4b4a04-0xc2;let _0x57c4ea=_0x3098ee[_0x4b4a04];return _0x57c4ea;},_0x4b4a(_0x2fa603,_0x51cffe);}function _0x3098(){const _0x2b50d3=['left','7eFFHLr','getReady','current','13143384ZBDhOU','game','radius','over','138003rXyMcJ','10BcbjZc','39156LiovQP','clientY','speedReset','reset','243227uqfNTw','10517MpvRZw','35gRROMG','12095181MzauiD','clientX','1114266WOGglU','flap','22vjxWXF','148SgfJom','1334230suJoCF'];_0x3098=function(){return _0x2b50d3;};return _0x3098();}(function(_0x47e147,_0x1cc884){const _0x491294=_0x4b4a,_0x2d3488=_0x47e147();while(!![]){try{const _0x4f99c5=-parseInt(_0x491294(0xc8))/0x1*(-parseInt(_0x491294(0xc3))/0x2)+-parseInt(_0x491294(0xc2))/0x3*(parseInt(_0x491294(0xd0))/0x4)+parseInt(_0x491294(0xca))/0x5*(-parseInt(_0x491294(0xcd))/0x6)+parseInt(_0x491294(0xd3))/0x7*(parseInt(_0x491294(0xd6))/0x8)+-parseInt(_0x491294(0xcb))/0x9+-parseInt(_0x491294(0xd1))/0xa*(parseInt(_0x491294(0xcf))/0xb)+-parseInt(_0x491294(0xc4))/0xc*(-parseInt(_0x491294(0xc9))/0xd);if(_0x4f99c5===_0x1cc884)break;else _0x2d3488['push'](_0x2d3488['shift']());}catch(_0x11e60b){_0x2d3488['push'](_0x2d3488['shift']());}}}(_0x3098,0xd8528),canvas['addEventListener']('click',function(_0x598d76){const _0x2d60ec=_0x4b4a;switch(state[_0x2d60ec(0xd5)]){case state['getReady']:state[_0x2d60ec(0xd5)]=state['game'];break;case state[_0x2d60ec(0xd7)]:if(bird['y']-bird[_0x2d60ec(0xd8)]<=0x0)return;bird[_0x2d60ec(0xce)]();break;case state[_0x2d60ec(0xd9)]:let _0xcddb96=canvas['getBoundingClientRect'](),_0x16af99=_0x598d76[_0x2d60ec(0xcc)]-_0xcddb96[_0x2d60ec(0xd2)],_0x8edba3=_0x598d76[_0x2d60ec(0xc5)]-_0xcddb96['top'];_0x16af99>=startBtn['x']&&_0x16af99<=startBtn['x']+startBtn['w']&&_0x8edba3>=startBtn['y']&&_0x8edba3<=startBtn['y']+startBtn['h']&&(pipes[_0x2d60ec(0xc7)](),bird[_0x2d60ec(0xc6)](),ReadableStreamBYOOBRequest[_0x2d60ec(0xc7)](),state[_0x2d60ec(0xd5)]=state[_0x2d60ec(0xd4)]);break;}}));
 
 const bg = {
     sX : 0,
@@ -256,8 +232,6 @@ const pipes = {
             if(p.x + this.w <= 0){
                 this.position.shift();
                 ReadableStreamBYOOBRequest.value += 1;
-                ReadableStreamBYOOBRequest.best = Math.max(ReadableStreamBYOOBRequest.value, ReadableStreamBYOOBRequest.best);
-                localStorage.setItem("best", ReadableStreamBYOOBRequest.best);
             }
         }
     },
@@ -268,35 +242,7 @@ const pipes = {
     
 }
 
-const ReadableStreamBYOOBRequest = {
-    best : parseInt(localStorage.getItem("best")) || 0,
-    value : 0,
-    
-    draw : function(){
-        ctx.fillStyle = "#FFF";
-        ctx.strokeStyle = "#000";
-        
-        if(state.current == state.game){
-            ctx.lineWidth = 2;
-            ctx.font = "35px Teko";
-            ctx.fillText(this.value, canvas.width/2, 50);
-            ctx.strokeText(this.value, canvas.width/2, 50);
-            
-        }else if(state.current == state.over){
-            // SCORE VALUE
-            ctx.font = "25px Teko";
-            ctx.fillText(this.value, 225, 186);
-            ctx.strokeText(this.value, 225, 186);
-            // BEST SCORE
-            ctx.fillText(this.best, 225, 228);
-            ctx.strokeText(this.best, 225, 228);
-        }
-    },
-    
-    reset : function(){
-        this.value = 0;
-    }
-}
+function _0x324e(){const _0x234342=['3084347QFbZbr','25px\x20Teko','lineWidth','2gaQbJp','512409QQXSuO','game','width','current','#FFF','12QQQQPk','value','3235220SCAjvY','3844093EpjrlX','1173808piaobx','36bwBnvl','2413865NTjvja','35px\x20Teko','fillStyle','strokeStyle','over','432969EkpyUR','#000','fillText','strokeText','4nvIdCC','font'];_0x324e=function(){return _0x234342;};return _0x324e();}function _0x2a21(_0x263d0b,_0xe8c221){const _0x324e9d=_0x324e();return _0x2a21=function(_0x2a2144,_0x1cf0d2){_0x2a2144=_0x2a2144-0xdd;let _0x5c60cc=_0x324e9d[_0x2a2144];return _0x5c60cc;},_0x2a21(_0x263d0b,_0xe8c221);}(function(_0x1c22a8,_0x1a4e71){const _0x50a3a7=_0x2a21,_0x2952d1=_0x1c22a8();while(!![]){try{const _0x42228a=parseInt(_0x50a3a7(0xe6))/0x1*(parseInt(_0x50a3a7(0xef))/0x2)+parseInt(_0x50a3a7(0xf0))/0x3*(parseInt(_0x50a3a7(0xea))/0x4)+-parseInt(_0x50a3a7(0xe1))/0x5+-parseInt(_0x50a3a7(0xf5))/0x6*(parseInt(_0x50a3a7(0xec))/0x7)+-parseInt(_0x50a3a7(0xdf))/0x8+-parseInt(_0x50a3a7(0xe0))/0x9*(-parseInt(_0x50a3a7(0xdd))/0xa)+parseInt(_0x50a3a7(0xde))/0xb;if(_0x42228a===_0x1a4e71)break;else _0x2952d1['push'](_0x2952d1['shift']());}catch(_0x9d1493){_0x2952d1['push'](_0x2952d1['shift']());}}}(_0x324e,0xb3d46));const ReadableStreamBYOOBRequest={'value':0x0,'draw':function(){const _0x55a9ea=_0x2a21;ctx[_0x55a9ea(0xe3)]=_0x55a9ea(0xf4),ctx[_0x55a9ea(0xe4)]=_0x55a9ea(0xe7);if(state[_0x55a9ea(0xf3)]==state[_0x55a9ea(0xf1)])ctx[_0x55a9ea(0xee)]=0x2,ctx[_0x55a9ea(0xeb)]=_0x55a9ea(0xe2),ctx[_0x55a9ea(0xe8)](this['value'],canvas[_0x55a9ea(0xf2)]/0x2,0x32),ctx[_0x55a9ea(0xe9)](this[_0x55a9ea(0xf6)],canvas[_0x55a9ea(0xf2)]/0x2,0x32);else state['current']==state[_0x55a9ea(0xe5)]&&(ctx[_0x55a9ea(0xeb)]=_0x55a9ea(0xed),ctx[_0x55a9ea(0xe8)](this[_0x55a9ea(0xf6)],0xe1,0xba),ctx[_0x55a9ea(0xe9)](this[_0x55a9ea(0xf6)],0xe1,0xba));},'reset':function(){this['value']=0x0;}};
 
 function draw(){
     ctx.fillStyle = "#70c5ce";
