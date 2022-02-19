@@ -9,24 +9,26 @@
 </head>
 <body>
     <a class="gohome" href="../index.html">Go home</a>
+    <div class = 'login'>
     <h1>Oh cool a login page</h1>
     <!---Remember to change default credentials....--->
-    <form method="post">
-        <div class="login">
-            <label><b>Username</b></label>
-            <br>
-            <input class="login-form" type="text" name="uname" id="uname"
-                   placeholder="Username">
-            <br><br>
-            <label><b>Password</b></label>
-            <br>
-            <input class="login-form" type="password" name="psw" id="psw"
-                   placeholder="Password">
-            <br><br>
-            <button type="button" id="submit" onclick="login()">Login
-            </button>
-            <p class="error" id="error"></p>
-        </div>
-    </form>
+        <form method="post">
+            <div>
+                <label><b>Username</b></label>
+                <br>
+                <input class="login-form" type="text" name="uname" id="uname"
+                       placeholder="Username">
+                <br><br>
+                <label><b>Password</b></label>
+                <br>
+                <input class="login-form" type="password" name="psw" id="psw"
+                       placeholder="Password">
+                <br><br>
+                <button type="button" id="submit" onclick="login()">Login
+                </button>
+                <p class="error" id="error"></p>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

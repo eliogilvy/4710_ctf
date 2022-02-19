@@ -66,6 +66,9 @@ div.task3{
 .text-center{
     text-align: center;
 }
+div.login{
+    align-content: center;
+}
 .center {
     text-align: center;
     padding: 10px;
@@ -85,4 +88,10 @@ div.task3{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
+}
+div.login{
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
 }
