@@ -6,7 +6,7 @@ function login() {
     var user = document.getElementById('uname').value;
     var pass = document.getElementById('psw').value;
     if (user === 'admin' && pass === 'password'){
-        window.location='/pages/login_success.html'
+        window.location='../pages/login_success.html'
     }
     else if (user !== 'admin'){
         document.getElementById('error').innerHTML = "Incorrect Username"
